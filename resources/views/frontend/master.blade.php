@@ -12,15 +12,19 @@ https://templatemo.com/tm-512-moonlight
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+        @vite(['resources/css/app.css'])
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/fontAwesome.css">
         <link rel="stylesheet" href="css/light-box.css">
         <link rel="stylesheet" href="css/templatemo-main.css">
 
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="{{ asset('js/accordion.js') }}"></script>
     </head>
 
 <body>
@@ -42,11 +46,43 @@ https://templatemo.com/tm-512-moonlight
               <img src="img/mini_logo.png" alt="">
           </div>
           <ul>
-            <li><a href="#1"><i class="fa fa-home"></i> <em>Login Script</em></a></li>
-            <li><a href="#2"><i class="fa fa-user"></i> <em>Input Text Script</em></a></li>
-            <li><a href="#3"><i class="fa fa-pencil"></i> <em>Assert Text Script</em></a></li>
-            <li><a href="#4"><i class="fa fa-image"></i> <em>Dropdown list Script</em></a></li>
-            <li><a href="#5"><i class="fa fa-envelope"></i> <em>Table Assert Script</em></a></li>
+            <li>
+                <a href="#1" class="accordion-header"><em>Login</em></a>
+                <ul class="accordion-content">
+                    <li><a href="#1"><em>Login Script</em></a></li>
+                    <li><a href="#2"><em>Input Text Script</em></a></li>
+                    <li><a href="#3"><em>Assert Text Script</em></a></li>
+                    <li><a href="#4"><em>Dropdown list Script</em></a></li>
+                    <li><a href="#5"><em>Table Assert Script</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#6" class="accordion-header"><em>Dashboard</em></a>
+                <ul class="accordion-content">
+                    <li><a href="#6"><em>Dashboard Overview</em></a></li>
+                    <li><a href="#7"><em>Widgets Script</em></a></li>
+                    <li><a href="#8"><em>Charts Script</em></a></li>
+                    <li><a href="#9"><em>Statistics Script</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#10" class="accordion-header"><em>Table</em></a>
+                <ul class="accordion-content">
+                    <li><a href="#10"><em>Data Table Script</em></a></li>
+                    <li><a href="#11"><em>Sorting Script</em></a></li>
+                    <li><a href="#12"><em>Filtering Script</em></a></li>
+                    <li><a href="#13"><em>Pagination Script</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#14" class="accordion-header"><em>Modal</em></a>
+                <ul class="accordion-content">
+                    <li><a href="#14"><em>Basic Modal Script</em></a></li>
+                    <li><a href="#15"><em>Form Modal Script</em></a></li>
+                    <li><a href="#16"><em>Confirmation Modal Script</em></a></li>
+                    <li><a href="#17"><em>Dynamic Modal Script</em></a></li>
+                </ul>
+            </li>
           </ul>
         </nav>
         
@@ -511,5 +547,9 @@ https://templatemo.com/tm-512-moonlight
         };
     }
     </script>
+
+    @push('scripts')
+    <script src="{{ asset('js/accordion.js') }}"></script>
+    @endpush
 </body>
 </html>

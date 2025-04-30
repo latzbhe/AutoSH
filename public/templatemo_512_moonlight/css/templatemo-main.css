@@ -282,7 +282,7 @@ nav a:hover::before {
   left: 30%;
   top: 10%;
   bottom: 10%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(8, 241, 183, 0.5)!important;
 }
 .content::-webkit-scrollbar {
   width: 5px;
