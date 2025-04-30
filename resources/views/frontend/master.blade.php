@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Moonlight CSS Website Template</title>
+        <title>Automation Script Hub</title>
 <!-- 
 Moonlight Template 
 https://templatemo.com/tm-512-moonlight
@@ -49,7 +49,6 @@ https://templatemo.com/tm-512-moonlight
             <li>
                 <a href="#1" class="accordion-header"><em>Login</em></a>
                 <ul class="accordion-content">
-                    <li><a href="#1"><em>Login Script</em></a></li>
                     <li><a href="#2"><em>Input Text Script</em></a></li>
                     <li><a href="#3"><em>Assert Text Script</em></a></li>
                     <li><a href="#4"><em>Dropdown list Script</em></a></li>

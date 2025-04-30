@@ -254,15 +254,13 @@ nav ul li a.accordion-header {
     padding: 12px 20px;
     cursor: pointer;
     position: relative;
-    color: #00ffff;
+    color: #fff;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
 }
 
 nav ul li a.accordion-header:hover {
-    background: rgba(0, 255, 255, 0.1);
-    color: #00ffff;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 nav ul li a.accordion-header::after {
@@ -284,12 +282,11 @@ nav ul li ul li {
 nav ul li ul li a {
     padding: 8px 20px;
     display: block;
-    color: #39ff14;
+    color: rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     margin-left: 0;
     padding-left: 0;
-    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;
 }
 
 nav ul li ul li:last-child a {
@@ -297,8 +294,8 @@ nav ul li ul li:last-child a {
 }
 
 nav ul li ul li a:hover {
-    color: #39ff14;
-    background: rgba(57, 255, 20, 0.1);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 nav a, nav a:visited, nav a:active {
