@@ -254,13 +254,16 @@ nav ul li a.accordion-header {
     padding: 12px 20px;
     cursor: pointer;
     position: relative;
-    color: #fff;
+    color: #00ffff;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
 }
 
 nav ul li a.accordion-header:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
 }
 
 nav ul li a.accordion-header::after {
@@ -268,10 +271,14 @@ nav ul li a.accordion-header::after {
     position: absolute;
     right: 15px;
     transition: transform 0.3s ease;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
 }
 
 nav ul li.active a.accordion-header::after {
     transform: rotate(45deg);
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
 }
 
 nav ul li ul li {
@@ -282,20 +289,26 @@ nav ul li ul li {
 nav ul li ul li a {
     padding: 8px 20px;
     display: block;
-    color: rgba(255, 255, 255, 0.8);
+    color: #39ff14;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     margin-left: 0;
     padding-left: 0;
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;
+    opacity: 1;
+}
+
+nav ul li ul li a:hover,
+nav ul li ul li a:focus,
+nav ul li ul li a:active {
+    color: #39ff14;
+    background: rgba(57, 255, 20, 0.1);
+    opacity: 1;
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;
 }
 
 nav ul li ul li:last-child a {
     border-bottom: none;
-}
-
-nav ul li ul li a:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
 }
 
 nav a, nav a:visited, nav a:active {
@@ -420,8 +433,13 @@ nav a:hover {
 
 .first-content {
 	padding: 100px;
-	text-align: left;
+	text-align: center;
 	padding-top: 13%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
 
 .first-content .author-image img {
@@ -429,12 +447,12 @@ nav a:hover {
 	border-radius: 30px;
 	max-width: 100%;
 	overflow: hidden;
-	float: left;
-	margin-right: 35px;
+	margin-right: 0;
+	margin-bottom: 20px;
 }
 
 .first-content h2 {
-	font-size: 36px;
+	font-size: 55px;
 	text-transform: uppercase;
 	font-weight: 700;
 	color: #fff;
@@ -444,7 +462,8 @@ nav a:hover {
 	padding-bottom: 10px;
 	margin-bottom: 20px;
 	margin-top: 0px;
-	text-align: center;
+	text-align: left;
+	width: auto;
 }
 
 .first-content p {
@@ -455,7 +474,10 @@ nav a:hover {
 	letter-spacing: 2px;
 	line-height: 26px;
 	margin-bottom: 20px;
-	text-align: center;
+	text-align: left;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .first-content em {
@@ -464,8 +486,10 @@ nav a:hover {
 }
 
 .first-content .main-btn {
-	display: inline-block;
-	margin-right: 15px;
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 20px;
 }
 
 .first-content .main-btn a {
@@ -478,11 +502,12 @@ nav a:hover {
 	color: #fff;
 	text-decoration: none;
 	transition: all 0.5s;
-	transition: all 0.5s;
 }
 
 .first-content .fb-btn {
-	display: inline-block;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
 }
 
 .first-content .fb-btn a {

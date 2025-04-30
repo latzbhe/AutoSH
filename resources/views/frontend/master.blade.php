@@ -93,7 +93,7 @@ https://templatemo.com/tm-512-moonlight
                       <div class="author-image"><img src="img/author_image.png" alt="Author Image"></div>
                   </div>
                   <div class="col-md-9">
-                      <h2>LOGIN</h2>
+                      <h24LOGIN</h4>
                       <p>A login automation script is designed to <strong><a rel="nofollow" href="https://www.toocss.com">automate the process of logging into a website, web application, or system</a></strong> by simulating the behavior of a user entering credentials (such as username/email and password)  <em> into login fields and</em>,  submitting the login form. </p>
                       <div class="main-btn"><a href="#2">SCRIPT</a></div>
                       <!-- div class="fb-btn"><a rel="nofollow" href="https://fb.com/templatemo">AWIT</a></div> -->
