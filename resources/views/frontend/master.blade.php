@@ -43,8 +43,8 @@ https://templatemo.com/tm-512-moonlight
           </div>
           <ul>
             <li><a href="#1"><i class="fa fa-home"></i> <em>Login Script</em></a></li>
-            <li><a href="#2"><i class="fa fa-user"></i> <em>Assert Text Script</em></a></li>
-            <li><a href="#3"><i class="fa fa-pencil"></i> <em>Error Message Script</em></a></li>
+            <li><a href="#2"><i class="fa fa-user"></i> <em>Input Text Script</em></a></li>
+            <li><a href="#3"><i class="fa fa-pencil"></i> <em>Assert Text Script</em></a></li>
             <li><a href="#4"><i class="fa fa-image"></i> <em>Dropdown list Script</em></a></li>
             <li><a href="#5"><i class="fa fa-envelope"></i> <em>Table Assert Script</em></a></li>
           </ul>
@@ -61,7 +61,7 @@ https://templatemo.com/tm-512-moonlight
                       <h2>LOGIN</h2>
                       <p>A login automation script is designed to <strong><a rel="nofollow" href="https://www.toocss.com">automate the process of logging into a website, web application, or system</a></strong> by simulating the behavior of a user entering credentials (such as username/email and password)  <em> into login fields and</em>,  submitting the login form. </p>
                       <div class="main-btn"><a href="#2">SCRIPT</a></div>
-                      <div class="fb-btn"><a rel="nofollow" href="https://fb.com/templatemo">AWIT</a></div>
+                      <!-- div class="fb-btn"><a rel="nofollow" href="https://fb.com/templatemo">AWIT</a></div> -->
                   </div>
               </div>
             </div>
@@ -69,19 +69,46 @@ https://templatemo.com/tm-512-moonlight
           <div class="slide" id="2">
             <div class="content second-content">
                 <div class="container-fluid">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="left-content">
-                            <h2>About Us</h2>
-                            <p>Please tell your friends about templatemo website. A variety of free CSS templates are available for immediate downloads.</p> 
-                            <p>Phasellus vitae faucibus orci. Etiam eleifend orci sed faucibus semper. Cras varius dolor et augue fringilla, eu commodo sapien iaculis. Donec eget dictum tellus. <a href="#">Curabitur</a> a interdum diam. Nulla vestibulum porttitor porta.</p>
-                            <p>Nulla vitae interdum libero, vel posuere ipsum. Phasellus interdum est et dapibus tempus. Vestibulum malesuada lorem condimentum mauris ornare dapibus. Curabitur tempor ligula et <a href="#">placerat</a> molestie.</p>
-                            <p>Aliquam efficitur eu purus in interdum. <a href="#">Etiam tincidunt</a> magna ex, sit amet lobortis felis bibendum id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                          <div class="main-btn"><a href="#3">Read More</a></div>
+                            <h2>Input Script</h2>
+                            <p><span style="color: orangered">from</span> selenium import webdriver <br>
+                                <span style="color: orangered">from</span> selenium.webdriver.common.by <span style="color: orangered">import</span> By <br>
+                                <span style="color: orangered">from </span>selenium.webdriver.support.wait<span style="color: orangered"> import </span>WebDriverWait <br>
+                                <span style="color: orangered">from </span> selenium.webdriver.support <span style="color: orangered">import</span> expected_conditions <span style="color:orangered">as</span> EC <br>
+                                <span style="color: orangered">import</span> time</p> 
+                                <p><span style="color: rgba(113, 116, 113, 0.979);"># Launch the browser </span><br>
+                                    driver = webdriver.Chrome()</p>                                    
+                                    <p><span style="color:rgba(113, 116, 113, 0.979);"># login link and credentials</span><br>
+                                driver.maximize_window() <br>
+                                website_link = <span style="color: rgb(7, 230, 63);">"http://10.10.99.18:8004/login"</span> <br>
+                                username = <span style="color: rgb(7, 230, 63);">"sjjinahon@gmail.com" </span><br>
+                                password = <span style="color: rgb(7, 230, 63);">"Dost@123"</span></p>
+                                <p><span style="color: rgba(113, 116, 113, 0.979);"># Locator</span><br>
+                                driver.get(website_link) <br>
+                                username_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, <span style="color: rgb(7, 230, 63)">"username"))) </span><br>
+                                password_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, <span style="color: rgb(7, 230, 63)">"password")))</span><br>
+                                </p>
+                                <p> <span style="color:rgba(113, 116, 113, 0.979);"># Input your credentials</span><br>
+                                    username_field.send_keys(username)<br>
+                                    time.sleep(1)<br>
+                                    password_field.send_keys(password)<br><br>
+                                    
+                                    time.sleep(2)
+                                    signin_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, <span style="color: rgb(7, 230, 63)">"login")))</span><br>
+                                    signin_button.click()<br><br>
+                                    
+                                    success = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, <span style="color: rgb(7, 230, 63)">"//div[@class='flex justify-between']//span[contains(text(),'Applications')]")))</span><br>
+                                    assert success.text == <span style="color: rgb(7, 230, 63)">"Applications"</span><br>
+                                    print(<span style="color: rgb(7, 230, 63)">"Successful login")</span><br>
+                                    
+                                    time.sleep(3)
+                          <div class="main-btn"><a href="#3">Next Script</a></div>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-2">
                         <div class="right-image">
-                          <img src="img/about_image.jpg" alt="">
+                          {{-- <img src="img/about_image.jpg" alt=""> --}}
                       </div>
                     </div>
                 </div>
@@ -95,16 +122,75 @@ https://templatemo.com/tm-512-moonlight
                             <div class="first-section">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="left-content">
-                                                <h2>Quisque commodo quam</h2>
-                                                <p>Vestibulum augue ex, finibus sit amet nisi id, maximus ultrices ipsum. Maecenas rhoncus nibh in mauris lobortis, a maximus diam faucibus. In et eros urna. Suspendisse potenti. Pellentesque commodo, neque nec molestie tempus, purus ante feugiat augue.</p>
-                                                <div class="main-btn"><a href="#4">Continue Reading</a></div>
+                                                <h2>Assert Field Label and button name</h2>
+                                                <p> <span style =  "color:gray;"># Test Cases 1 :  View System Name</span><br>
+                                                <span style="color:orangered;">try</span><span style="color:  rgb(247, 252, 248);">:</span><br>
+                                                <span style="padding-left: 20px;">system_name = driver.find_element(By.XPATH,<span style="color: rgb(7, 230, 63);"> "//h1[@class='font-brush text-center text-4xl lg:text-6xl text-shadow-sm text-heading-blue']")</span><br>
+                                                <span style="color:orangered;padding-left: 20px;">if</span> system_name.text.strip() == <span style="color: rgb(7, 230, 63);"> "Balik Scientist Program Management Systems":</span><br>
+                                                <span style="color:violet;padding-left: 40px;">print</span><span style="color: rgb(247, 252, 248);"> (</span><span style="color: rgb(7, 230, 63);">"Test Case 1 - Passed"</span><span style="color: rgb(247, 252, 248);">)</span><br>
+                                                <span style="color:orangered;padding-left: 20px;">else:<br>
+                                                <span style="color:violet;padding-left: 40px;">print</span><span style="color: rgb(247, 252, 248);"> (</span><span style="color: rgb(7, 230, 63);">"Test Case 1 - Failed: Display correct System Name"</span><span style="color: rgb(247, 252, 248);">)</span><br>
+                                                <span style="color:orangered;">except </span>NoSuchElementException:<br>
+                                                <span style="color:violet;;padding-left: 40px;">print</span><span style="color: rgb(247, 252, 248);"> (</span><span style="color: rgb(7, 230, 63);">"Test Case 1 - Failed: Display System Name"</span><span style="color: rgb(247, 252, 248);">)</span><br>
+                                                    
+                                                    
+                                                <p> <span style =  "color:gray;">    # Test Cases 2: View Form Name</span><br>
+                                                    try:<br>
+                                                        form_name = driver.find_element(By.XPATH, "//h2[@class='text-gray-600']")<br>
+                                                        if form_name.text.strip() == "Login Form":<br>
+                                                            print("Test Case 2 - Passed ")<br>
+                                                        else:<br>
+                                                            print("Test Case 2 - Failed : Display correct Form Name")<br>
+                                                    except NoSuchElementException:<br>
+                                                        print("Test Case 2 - Failed: Display Form Name ")<br>
+                                                    
+                                                    # Test Cases 3: View field label name-Username<br>
+                                                    try:<br>
+                                                        username_field = driver.find_element(By.CSS_SELECTOR, "input[placeholder='Username']")<br>
+                                                        placeholder_username = username_field.get_attribute ( "placeholder" )<br>
+                                                        if placeholder_username.strip() == "Username":<br>
+                                                            print("Test Case 3 - Passed")<br>
+                                                        else:<br>
+                                                    except NoSuchElementException:<br>
+                                                        print("Test Case 3 - Failed: Display placeholder")<br>
+                                                    
+                                                    # Test Cases 4: View field label name-Password<br>
+                                                    try:<br>
+                                                        password_field = driver.find_element(By.XPATH, "//input[@id='password']")<br>
+                                                        placeholder_password = password_field.get_attribute("placeholder")<br>
+                                                        if placeholder_password.strip() == "Password":<br>
+                                                            print("Test Case 4 - Passed")<br>
+                                                        else:<br>
+                                                            print(f"Test Case 4 - Failed: Expected placeholder name 'Password', but found'{placeholder_password}'")<br>
+                                                    except NoSuchElementException:<br>
+                                                        print("Test Case 4 - Failed: Display Field label name")<br>
+                                                    
+                                                    try:<br>
+                                                        login_button=driver.find_element(By.ID, "login")<br>
+                                                        login_text = login_button.text<br>
+                                                        if login_text=="Login":<br>
+                                                            print("Test Case 5 - Passed")<br>
+                                                        else:<br>
+                                                            print(f"Test Case 5 - Failed: Button name should 'Login', but the displayed is '{login_text}'")<br>
+                                                    except NoSuchElementException:<br>
+                                                        print("Button name is missing")<br>
+                                                    
+                                                    try:<br>
+                                                        footer = driver.find_element(By.XPATH, "//img[@class='absolute bottom-12 right-0 h-80']")<br>
+                                                        if footer.is_displayed():<br>
+                                                            print("Test Case 6 - Passed")<br>
+                                                        else:<br>
+                                                            print("Test Case 6 - Failed: Footer is not displayed")<br>
+                                                    except NoSuchElementException:<br>
+                                                        print("Test Case 6 -  Failed: Footer is not found")</p><br>
+                                                {{-- <div class="main-btn"><a href="#4">Continue Reading</a></div> --}}
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="right-image">
-                                                <img src="img/first_service.jpg" alt="first service">
+                                                {{-- <img src="img/first_service.jpg" alt="first service"> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -113,14 +199,14 @@ https://templatemo.com/tm-512-moonlight
                             <div class="second-section">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-0">
                                             <div class="left-image">
-                                                <img src="img/second_service.jpg" alt="second service">
+                                                {{-- <img src="img/second_service.jpg" alt="second service"> --}}
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="right-content">
-                                                <h2>Maecenas eu purus eu sapien</h2>
+                                                <h2>ASSERT COMPLETION and ERROR MESSAGE</h2>
                                                 <p>Sed vitae felis in lorem mollis mollis eget in leo. Donec commodo, ex nec rutrum venenatis, nisi nisl malesuada magna, sed semper ipsum enim a ipsum. Aenean in ante vel mi molestie bibendum. Quisque sit amet lacus in diam pretium faucibus. Cras vel justo lorem.</p>
                                                 <div class="main-btn"><a href="#4">Continue Reading</a></div>
                                             </div>
